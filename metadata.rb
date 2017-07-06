@@ -1,5 +1,5 @@
 name 'chef_apache_windows'
-maintainer 'The Authors'
+maintainer 'Taylor Monacelli'
 maintainer_email 'taylor.monacelli@streambox.com'
 license 'All Rights Reserved'
 description 'Installs/Configures chef_apache_windows'
