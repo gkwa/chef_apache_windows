@@ -10,3 +10,4 @@ issues_url 'https://github.com/taylormonacelli/chef_apache_windows/issues'
 source_url 'https://github.com/taylormonacelli/chef_apache_windows'
 
 depends 'vcruntime'
+depends 'widnows'
