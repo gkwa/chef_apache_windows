@@ -4,12 +4,14 @@ environment:
   machine_port: 5985
   KITCHEN_YAML: .kitchen.appveyor.yml
 
-cache:
-  - '%TEMP%\verifier\gems'
-
 install:
-  - cinst chefdk
-  - SET PATH=C:\opscode\chefdk\bin;%PATH%
+  - ps: cinst chefdk
+  - ps: net user /add $env:machine_user $env:machine_pass
+  - ps: net localgroup administrators $env:machine_user /add
+  - ps: $env:PATH="C:\Ruby$env:ruby_version\bin;$env:PATH"
+  - ps: $env:PATH="c:\opscode\chefdk\bin;$env:PATH"
+  - ps: gem install bundler --quiet --no-ri --no-rdoc
+  - ps: Invoke-WebRequest -Uri http://curl.haxx.se/ca/cacert.pem -OutFile c:\projects\kitchen-machine\certs.pem
 
 build_script:
   - chef exec bundle install --without=development integration
