@@ -9,10 +9,10 @@ property :zip_x64_uri, String, default: 'https://www.apachelounge.com/download/V
 action :create do
   windows_zipfile new_resource.install_path do
     zip_uri = if node['kernel']['machine'] != 'x86_64'
-        new_resource.zip_x86_uri
-      else
-        use_32bit ? new_resource.zip_x86_uri : new_resource.zip_x64_uri
-      end
+                new_resource.zip_x86_uri
+              else
+                use_32bit ? new_resource.zip_x86_uri : new_resource.zip_x64_uri
+              end
     source zip_uri
     action :unzip
     not_if { ::File.exist?("#{new_resource.install_path}/bin/httpd.exe") }
