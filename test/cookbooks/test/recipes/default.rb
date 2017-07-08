@@ -1,1 +1,1 @@
-include_recipe 'chef_apche_windows::default'
+include_recipe 'chef_apache_windows::default'
