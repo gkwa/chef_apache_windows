@@ -1,1 +1,1 @@
-include_recipe "vcruntime::vc14"
+include_recipe 'vcruntime::vc14'
