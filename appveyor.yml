@@ -17,6 +17,8 @@ install:
   - ps: net user /add $env:machine_user $env:machine_pass
   - ps: net localgroup administrators $env:machine_user /add
 
+clone_depth: 1
+
 build_script:
   - ps: chef shell-init powershell | iex; cmd /c c:\opscode\chefdk\bin\chef.bat --version
 
