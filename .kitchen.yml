@@ -17,5 +17,5 @@ platforms:
 suites:
 - name: default
   run_list:
-  - recipe[chef_apache_windows::default]
+  - test
   attributes:
