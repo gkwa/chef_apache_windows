@@ -7,6 +7,10 @@ driver:
   username: <%= ENV["machine_user"] %>
   password: <%= ENV["machine_pass"] %>
 
+verifier:
+  name: inspec
+  inspec_tests: test/integration/default/inspec
+
 provisioner:
   name: chef_zero
 
