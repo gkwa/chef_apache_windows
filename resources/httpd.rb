@@ -7,8 +7,8 @@ property :zip_x64_uri, String, default: 'https://www.apachelounge.com/download/V
 
 action :create do
   windows_zipfile install_path do
-    source zip_x64_uri
+    source new_resource.zip_x64_uri
     action :unzip
-    not_if { ::File.exist?("#{install_path}/bin/httpd.exe") }
+    not_if { ::File.exist?("#{new_resource.install_path}/bin/httpd.exe") }
   end
 end
