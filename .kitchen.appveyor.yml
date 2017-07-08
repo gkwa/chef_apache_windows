@@ -9,8 +9,6 @@ driver:
 
 verifier:
   name: inspec
-  inspec_tests:
-    path: test/integration/default/inspec
 
 provisioner:
   name: chef_zero
