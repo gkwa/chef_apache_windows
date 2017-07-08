@@ -8,7 +8,7 @@ property :zip_x64_uri, String, default: 'https://www.apachelounge.com/download/V
 
 action :create do
   windows_zipfile new_resource.install_path do
-    zip_url = if node['kernel']['machine'] != 'x86_64'
+    zip_uri = if node['kernel']['machine'] != 'x86_64'
         new_resource.zip_x86_uri
       else
         use_32bit ? new_resource.zip_x86_uri : new_resource.zip_x64_uri
