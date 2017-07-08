@@ -16,4 +16,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - test
+      - recipe[test::default]
+    attributes:
