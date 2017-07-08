@@ -22,8 +22,7 @@ build_script:
 test_script:
   - chef exec rubocop --version
   - chef exec foodcritic --version
-  - chef exec rake style
-  - chef exec rake spec
+  - chef exec delivery local all
   - chef exec kitchen verify
 
 deploy: off
