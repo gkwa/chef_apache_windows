@@ -1,11 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf'
-gem 'chef'
-gem 'chefspec'
-gem 'cookstyle'
-gem 'foodcritic'
-
 group :integration do
   gem 'kitchen-localhost'
   gem 'kitchen-vagrant'

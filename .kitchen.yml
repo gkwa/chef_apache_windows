@@ -4,8 +4,6 @@ driver:
 
 provisioner:
   name: chef_zero
-  always_update_cookbooks: true
-  chef_omnibus_install_options: -d /tmp/vagrant-cache/vagrant_omnibus
 
 platforms:
 - name: windows-2012r2
