@@ -1,7 +1,6 @@
 environment:
-  machine_user: test_user
-  machine_pass: Pass@word1
-  machine_port: 5985
+  machine_user: vagrant
+  machine_pass: vagrant
   KITCHEN_YAML: .kitchen.appveyor.yml
 
 install:
@@ -18,8 +17,13 @@ install:
   - ps: net localgroup administrators $env:machine_user /add
 
 build_script:
-  - chef exec bundle install --without=development integration
-  - copy .kitchen.appveyor.yml .kitchen.local.yml
+  - ps: chef shell-init powershell | iex; cmd /c c:\opscode\chefdk\bin\chef.bat --version
 
 test_script:
-  - chef exec kitchen test
+  - chef exec rubocop --version
+  - chef exec foodcritic --version
+  - chef exec rake style
+  - chef exec rake spec
+  - chef exec kitchen verify
+
+deploy: off
