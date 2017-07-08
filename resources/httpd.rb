@@ -1,3 +1,4 @@
+resource_name :httpd
 property :install_path, String, name_property: true
 property :instance_name, String
 property :version, String, default: '2.4.26'
