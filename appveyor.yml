@@ -5,7 +5,7 @@ environment:
   KITCHEN_YAML: .kitchen.appveyor.yml
 
 install:
-  - ps: cinst chefdk
+  - ps: cinst --no-progress chefdk
   - ps: net user /add $env:machine_user $env:machine_pass
   - ps: net localgroup administrators $env:machine_user /add
   - ps: $env:PATH="C:\Ruby$env:ruby_version\bin;$env:PATH"
